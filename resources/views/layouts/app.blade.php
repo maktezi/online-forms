@@ -161,6 +161,12 @@
                                         <span>Dashboard</span>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('users.admin') }}" class="waves-effect">
+                                        <i class="fab fa-dev"></i><span class="badge rounded-pill bg-success float-end"></span>
+                                        <span>Users</span>
+                                    </a>
+                                </li>
 
                                 <li class="menu-title">DATA TABLE</li>
                                 <li>
@@ -221,7 +227,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-end d-none d-sm-block">
-                                    Developed by axi0MX
+                                    Developed by OwO
                                 </div>
                             </div>
                         </div>

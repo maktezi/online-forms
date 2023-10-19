@@ -87,7 +87,6 @@ class AppearanceController extends Controller
     public function delete($id)
     {
         Appearance::destroy($id);
-        return view('admin.cert_appearance.success');
         return redirect()->back();
     }
 

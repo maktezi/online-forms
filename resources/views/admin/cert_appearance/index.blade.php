@@ -54,11 +54,6 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <a href="{{ route('delete.cert.appearance', $appearance->id) }}" type="button" class="btn btn-primary waves-effect waves-light btn-danger" style="padding: 5px 10px;">Confirm</a>
-                                                        @if (Auth::user()->is_admin == 1)
-                                                            <a style="padding: 5px 15px;" href="{{ route('cert.appearance.admin') }}" class="btn btn-primary btn-warning" type="button" style="padding: 5px 10px;">Cancel</a>
-                                                        @else
-                                                            <a style="padding: 5px 15px;" href="{{ route('cert.appearance') }}" class="btn btn-primary btn-warning" type="button" style="padding: 5px 10px;">Cancel</a>
-                                                        @endif
                                                     </div>
                                                 </div><!-- /.modal-content -->
                                             </div><!-- /.modal-dialog -->

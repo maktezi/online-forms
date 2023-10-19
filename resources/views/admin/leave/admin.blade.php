@@ -54,11 +54,6 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <a href="{{ route('delete.leave', $leave->id) }}" type="button" class="btn btn-primary waves-effect waves-light btn-danger" style="padding: 5px 10px;">Confirm</a>
-                                                        @if (Auth::user()->is_admin == 1)
-                                                            <a style="padding: 5px 15px;" href="{{ route('leave.admin') }}" class="btn btn-primary btn-warning" type="button" style="padding: 5px 10px;">Cancel</a>
-                                                        @else
-                                                            <a style="padding: 5px 15px;" href="{{ route('leave.user') }}" class="btn btn-primary btn-warning" type="button" style="padding: 5px 10px;">Cancel</a>
-                                                        @endif
                                                     </div>
                                                 </div><!-- /.modal-content -->
                                             </div><!-- /.modal-dialog -->

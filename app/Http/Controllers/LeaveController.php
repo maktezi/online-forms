@@ -76,7 +76,6 @@ class LeaveController extends Controller
     public function delete($id)
     {
         Leave::destroy($id);
-        return view('admin.leave.success');
         return redirect()->back();
     }
 }
