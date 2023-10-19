@@ -18,7 +18,7 @@
     <div class="card">
         <div class="card-body">
             <h3 class="card-title text-center">APPLICATION FOR LEAVE</h3><br>
-            <form action="{{ route('leave.form') }}" method="POST" class="needs-validation">
+            <form action="{{ route('store.leave') }}" method="POST" class="needs-validation">
                 @csrf
 
                 <div class="row">
