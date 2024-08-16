@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Saln;
 use App\Models\User;
 use App\Models\Leave;
 use App\Models\Appearance;
@@ -19,7 +20,8 @@ class AdminController extends Controller
         $totalUser = User::count();
         $totalLeave = Leave::count();
         $totalAppearance = Appearance::count();
-        return view('admin.dashboard',compact('totalLeave','totalAppearance', 'totalUser'));
+        $totalSaln = Saln::count();
+        return view('admin.dashboard',compact('totalLeave','totalAppearance', 'totalUser', 'totalSaln'));
     }
 
 }

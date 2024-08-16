@@ -181,6 +181,12 @@
                                         <span>Certificate of Appearance</span>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('saln.admin') }}" class="waves-effect">
+                                        <i class="fab fa-dev"></i><span class="badge rounded-pill bg-success float-end"></span>
+                                        <span>SALN</span>
+                                    </a>
+                                </li>
 {{-- USER SIDE --}}
                             @else
                                 <li class="menu-title">Form & Table</li>
@@ -194,6 +200,12 @@
                                     <a href="{{ route('cert.appearance') }}" class="waves-effect">
                                         <i class="fab fa-dev"></i><span class="badge rounded-pill bg-success float-end"></span>
                                         <span>Certificate of Appearance</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('saln.index') }}" class="waves-effect">
+                                        <i class="fab fa-dev"></i><span class="badge rounded-pill bg-success float-end"></span>
+                                        <span>SALN</span>
                                     </a>
                                 </li>
                             @endif
